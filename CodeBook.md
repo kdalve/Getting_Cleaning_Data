@@ -9,52 +9,70 @@ Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ort
 
 ##Steps of run_analysis.R:
 
-<B>Retrieve Data</B><BR>
+**Retrieve Data**
+
         Download Course Project data files (https://d396qusza40orc.cloudfront        .net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)  & unzip
 Set working directory
         setwd("~/Desktop/Coursera/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset") 
 List the files to properly read from the correct directory
 
-<B>Merge files</B><BR>
+**Merge files**
+
         Merge the training ("./train/X_train.txt") and the test ("./test/X_test.txt") sets with rbind to create one dataset
         Read training ("./train/subject_train.txt") and test ("./test/subject_test.txt") subject ids and combine using rbind
         Read training ("./train/y_train.txt") and test ("./test/y_test.txt") activities and combine using rbind
 
 
-<B>Extract Mean & Standard Deviation for each measurement</B><BR>
+**Extract Mean & Standard Deviation for each measurement**
+
         Read the features ("./features.txt") file
         Extract columns with the mean or std pattern (using grep) in the features column
         Subset the mean and sd columns from the combined training and test data set
 
-<B>Name the activities in the data set</B> <BR>
+**Name the activities in the data set**
+
         View the activity labels ("./activity_labels.txt") to change the numeric category to a string variable
         Replace the numeric category in activity data with a descriptive string:
         1 WALKING 2 WALKING_UPSTAIRS 3 WALKING_DOWNSTAIRS 4 SITTING 
         5 STANDING 6 LAYING
 
-<B>Label the data set with descriptive variable names</B><BR>
+**Label the data set with descriptive variable names**
+
         Adjust the column names in the subsetted means and sd data set using gsub to remove hyphens, spaces, etc.
         Replace the current variable name in activity data and subject data in the data sets with "activity" and "subject" respectively.
 
-<B>Bind the subject data, means and sd data, and activity data with cbind to create the first tidy data set (".tidy1.txt")
+**Bind the subject data, means and sd data, and activity data with cbind to create the first tidy data set (".tidy1.txt")**
 
-Create an Independent Tidy data set ("tidy2.txt") with the mean of each variable for each activity and subject by using aggregate. </B>
+**Create an Independent Tidy data set ("tidy2.txt") with the mean of each variable for each activity and subject by using aggregate.**
 
 #Data Created through R Script:
-actdata : 10299 obs. of 1 variable.<BR>
-actlabel : 6 obs. of 2 variables.<BR>
-acttest : 2947 obs. of 1 variable.<BR>
-acttrain : 7352 obs. of 1 variable.<BR>
-features : 561 obs. of 2 variables.<BR>
-meansdData : 10299 obs. of 66 variables.<BR>
-subdata : 10299 obs. of 1 variables.<BR>
-subtest : 2947 obs. of 1 variable.<BR>
-subtrain : 7352 obs. of 1 variable.<BR>
-test : 2947 obs. of 561 variables.<BR>
-tidy1 : 10299 obs. of 68 variables.<BR>
-tidy2 : 180 obs. of 68 variables.<BR>
-training : 7352 obs. of 561 variables.<BR>
-ttdata : 10299 obs. of 561 variables.<BR>
+actdata : 10299 obs. of 1 variable.
+
+actlabel : 6 obs. of 2 variables.
+
+acttest : 2947 obs. of 1 variable.
+
+acttrain : 7352 obs. of 1 variable.
+
+features : 561 obs. of 2 variables.
+
+meansdData : 10299 obs. of 66 variables.
+
+subdata : 10299 obs. of 1 variables.
+
+subtest : 2947 obs. of 1 variable.
+
+subtrain : 7352 obs. of 1 variable.
+
+test : 2947 obs. of 561 variables.
+
+tidy1 : 10299 obs. of 68 variables.
+
+tidy2 : 180 obs. of 68 variables.
+
+training : 7352 obs. of 561 variables.
+
+ttdata : 10299 obs. of 561 variables.
 
 
 #Variables:

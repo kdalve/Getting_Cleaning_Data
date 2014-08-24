@@ -58,9 +58,9 @@ names(subdata) <- "subject"
 #Binds the subject id, means and sd columns, and activity to create the first tidy data set
 tidy1<-cbind(subdata,meansdData,actdata)
 names(tidy1)
-write.table(tidy1,"tidy1.txt") #Saves the data set
+write.table(tidy1,"tidy1.txt", row.names=FALSE) #Saves the data set
 
 #Independent Tidy data set with Average of each variable for each activity and subject
 tidy2<-aggregate.data.frame(tidy1[ ,2:67], by=list(tidy1$subject,tidy1$activity), FUN=mean, na.rm=TRUE)
 
-write.table(tidy2,"tidy2.txt") #Saves the data set
+write.table(tidy2,"tidy2.txt", row.names=FALSE) #Saves the data set

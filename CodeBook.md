@@ -9,52 +9,52 @@ Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ort
 
 ##Steps of run_analysis.R:
 
-Retrieve Data
+<B>Retrieve Data</B><BR>
         Download Course Project data files (https://d396qusza40orc.cloudfront        .net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)  & unzip
 Set working directory
         setwd("~/Desktop/Coursera/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset") 
 List the files to properly read from the correct directory
 
-Merge files
+<B>Merge files</B><BR>
         Merge the training ("./train/X_train.txt") and the test ("./test/X_test.txt") sets with rbind to create one dataset
         Read training ("./train/subject_train.txt") and test ("./test/subject_test.txt") subject ids and combine using rbind
         Read training ("./train/y_train.txt") and test ("./test/y_test.txt") activities and combine using rbind
 
 
-Extract Mean & Standard Deviation for each measurement
+<B>Extract Mean & Standard Deviation for each measurement</B><BR>
         Read the features ("./features.txt") file
         Extract columns with the mean or std pattern (using grep) in the features column
         Subset the mean and sd columns from the combined training and test data set
 
-Name the activities in the data set 
+<B>Name the activities in the data set</B> <BR>
         View the activity labels ("./activity_labels.txt") to change the numeric category to a string variable
         Replace the numeric category in activity data with a descriptive string:
         1 WALKING 2 WALKING_UPSTAIRS 3 WALKING_DOWNSTAIRS 4 SITTING 
         5 STANDING 6 LAYING
 
-Label the data set with descriptive variable names
-        Adjusts the column names in the subsetted means and sd data set using gsub to remove hyphens, spaces, etc.
+<B>Label the data set with descriptive variable names</B><BR>
+        Adjust the column names in the subsetted means and sd data set using gsub to remove hyphens, spaces, etc.
         Replace the current variable name in activity data and subject data in the data sets with "activity" and "subject" respectively.
 
-Bind the subject data, means and sd data, and activity data with cbind to create the first tidy data set (".tidy1.txt")
+<B>Bind the subject data, means and sd data, and activity data with cbind to create the first tidy data set (".tidy1.txt")
 
-Create an Independent Tidy data set ("tidy2.txt") with the mean of each variable for each activity and subject by using aggregate. 
+Create an Independent Tidy data set ("tidy2.txt") with the mean of each variable for each activity and subject by using aggregate. </B>
 
 #Data Created through R Script:
-actdata : 10299 obs. of 1 variable.
-actlabel : 6 obs. of 2 variables.
-acttest : 2947 obs. of 1 variable.
-acttrain : 7352 obs. of 1 variable.
-features : 561 obs. of 2 variables.
-meansdData : 10299 obs. of 66 variables.
-subdata : 10299 obs. of 1 variables.
-subtest : 2947 obs. of 1 variable.
-subtrain : 7352 obs. of 1 variable.
-test : 2947 obs. of 561 variables.
-tidy1 : 10299 obs. of 68 variables.
-tidy2 : 180 obs. of 68 variables.
-training : 7352 obs. of 561 variables.
-ttdata : 10299 obs. of 561 variables.
+actdata : 10299 obs. of 1 variable.<BR>
+actlabel : 6 obs. of 2 variables.<BR>
+acttest : 2947 obs. of 1 variable.<BR>
+acttrain : 7352 obs. of 1 variable.<BR>
+features : 561 obs. of 2 variables.<BR>
+meansdData : 10299 obs. of 66 variables.<BR>
+subdata : 10299 obs. of 1 variables.<BR>
+subtest : 2947 obs. of 1 variable.<BR>
+subtrain : 7352 obs. of 1 variable.<BR>
+test : 2947 obs. of 561 variables.<BR>
+tidy1 : 10299 obs. of 68 variables.<BR>
+tidy2 : 180 obs. of 68 variables.<BR>
+training : 7352 obs. of 561 variables.<BR>
+ttdata : 10299 obs. of 561 variables.<BR>
 
 
 #Variables:
@@ -71,7 +71,7 @@ These signals were used to estimate variables of the feature vector for each pat
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
 ##Current data sets:
-For Tidy 1, only Mean and Standard Deviation measurements were kept as variables.
+For Tidy 1, only Mean and Standard Deviation measurements were kept as variables.<BR>
 For Tidy 2, the mean of the Tidy 1 variables were calculated by activity and subject. 
 
 

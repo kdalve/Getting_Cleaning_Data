@@ -62,5 +62,7 @@ write.table(tidy1,"tidy1.txt", row.names=FALSE) #Saves the data set
 
 #Independent Tidy data set with Average of each variable for each activity and subject
 tidy2<-aggregate.data.frame(tidy1[ ,2:67], by=list(tidy1$subject,tidy1$activity), FUN=mean, na.rm=TRUE)
+names(tidy2)[names(tidy2) == 'Group.1'] <- 'subject'
+names(tidy2)[names(tidy2) == 'Group.2'] <- 'activity'
 
 write.table(tidy2,"tidy2.txt", row.names=FALSE) #Saves the data set

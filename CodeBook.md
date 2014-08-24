@@ -45,6 +45,8 @@ List the files to properly read from the correct directory
 
 **Create an Independent Tidy data set ("tidy2.txt") with the mean of each variable for each activity and subject by using aggregate.**
 
+        Renames the subject and activity column.
+
 #Data Created through R Script:
 actdata : 10299 obs. of 1 variable.
 
@@ -164,8 +166,8 @@ For Tidy 2, the mean of the Tidy 1 variables were calculated by activity and sub
 "activity"   Activity description with six levels : "WALKING_UPSTAIRS"                 "WALKING_DOWNSTAIRS" "SITTING" "STANDING" "LAYING"
 
 ##Tidy2
-"Group.1"    Subject ID 1:30 repeating 6 times     
-"Group.2"    Activity   six levels : "WALKING_UPSTAIRS"                                 "WALKING_DOWNSTAIRS" "SITTING" "STANDING" "LAYING"          
+"subject"    Subject ID 1:30 repeating 6 times     
+"activity"    Activity   six levels : "WALKING_UPSTAIRS"                                 "WALKING_DOWNSTAIRS" "SITTING" "STANDING" "LAYING"          
 "tBodyAccmeanX"            
 "tBodyAccmeanY"           
 "tBodyAccmeanZ"            

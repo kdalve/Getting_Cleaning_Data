@@ -2,7 +2,6 @@
 
 ##Steps
 
-Step 1:
 1. Download Course Project data file (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) & unzip
 2. Download run_analysis.R code
 3. Store the run_analysis.R code in the UCI HAR DATASET
